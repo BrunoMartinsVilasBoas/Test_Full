@@ -1,0 +1,29 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+input[type='checkbox'] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid #00a1ff;
+  background-color: #00a1ff;
+  color: white;
+}

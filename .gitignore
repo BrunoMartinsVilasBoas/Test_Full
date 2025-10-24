@@ -1,2 +1,3 @@
-./algo/node_modules/*
-./front/node_modules/*
+./algo/node_modules
+
+/front/node_modules
