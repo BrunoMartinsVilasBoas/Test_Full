@@ -1,3 +1,5 @@
-./algo/node_modules
+/algo/node_modules
+/algo/dist
 
 /front/node_modules
+/front/dist

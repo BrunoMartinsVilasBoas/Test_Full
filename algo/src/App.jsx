@@ -1,5 +1,5 @@
 import './App.css';
-import UseAlgo from './hooks/use-algo';
+import UseAlgo from './hooks/useAlgo';
 
 function App() {
   const { handleCheckFizzbuzz, result } = UseAlgo();

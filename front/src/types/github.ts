@@ -1,5 +1,5 @@
-// Interface pour un utilisateur dans les résultats de recherche GitHub
 export interface IGitHubSearchUser {
+  idFull: number;
   avatar_url: string;
   events_url: string;
   followers_url: string;
@@ -22,7 +22,6 @@ export interface IGitHubSearchUser {
   user_view_type: string;
 }
 
-// Interface pour la réponse complète de recherche d'utilisateurs GitHub
 export interface IGitHubSearchResponse {
   items: IGitHubSearchUser[];
   total_count: number;

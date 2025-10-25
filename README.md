@@ -27,7 +27,7 @@ Implementation of the **FizzBuzz** algorithm using a modern approach with React 
 
 ### 🎨 **Frontend Exercise**
 
-Development of a reactive user interface to test the FizzBuzz algorithm.
+**GitHub user search and management application** with reactive interface and advanced features.
 
 ## 🏗️ Project Structure
 
@@ -36,13 +36,22 @@ Test_Full/
 ├── 📁 algo/                    # Algorithm exercise
 │   ├── 📁 src/
 │   │   ├── 📁 hooks/
-│   │   │   └── use-algo.ts     # Custom FizzBuzz hook
+│   │   │   └── useAlgo.ts      # Custom FizzBuzz hook
 │   │   ├── App.jsx             # Main component
 │   │   └── ...
 │   └── package.json
 ├── 📁 front/                   # Frontend exercise
 │   ├── 📁 src/
-│   │   ├── App.jsx             # User interface
+│   │   ├── 📁 components/
+│   │   │   ├── SearchInput.tsx     # Search bar
+│   │   │   ├── UserList.tsx        # User list
+│   │   │   ├── UserItem.tsx        # User item
+│   │   │   └── ActionsSelected.tsx # Bulk actions
+│   │   ├── 📁 hooks/
+│   │   │   └── useUserManagement.ts # User management logic
+│   │   ├── 📁 types/
+│   │   │   └── github.ts           # TypeScript interfaces
+│   │   ├── App.tsx                 # Main component
 │   │   └── ...
 │   └── package.json
 └── 📄 README.md
@@ -82,6 +91,9 @@ npm install
 
 # Start development server
 npm run dev
+
+# Run linting tests
+npm run lint
 ```
 
 ## 🧮 Algorithm Exercise
@@ -104,37 +116,67 @@ npm run dev
 // - Otherwise → returns the number
 ```
 
+### Usage
+
+Enter a number in the input field and the algorithm will automatically display the corresponding FizzBuzz result.
+
 ## 🎨 Frontend Exercise
 
-### Features
+### Key Features
 
-- 🎯 **Modern and responsive** user interface
-- ⚡ **Optimized performance** with Vite
-- 🔧 **ESLint configuration** for code quality
-- 📱 **Adaptive design** for all screen sizes
+- **GitHub user search** via official API
+- **Smart debouncing** (700ms) to optimize API requests
+- **Multiple user selection** with visual management
+- **Bulk actions** on selected users:
+  - Duplicate users
+  - Delete users
+  - Reset selection
+- **Centralized state management** with custom hook
+- **Reactive and modern** interface
+- **Complete error handling** (404, 403, 500)
+- **Loading states** for better UX
+- **Responsive design** for all screen sizes
+
+### Technical Architecture
+
+- **`useUserManagement`** : Custom hook centralizing all business logic
+- **Modular components** : SearchInput, UserList, UserItem, ActionsSelected
+- **Strict TypeScript** : Complete interfaces for GitHub data
+- **Optimized management** : Debouncing and efficient state handling
 
 ## 🛠️ Technologies Used
 
 ### Core Technologies
 
 - **React 19.1.1** - Modern UI library
-- **TypeScript** - Static typing for JavaScript
+- **TypeScript 5.0+** - Static typing for JavaScript
 - **Vite 7.1.7** - Ultra-fast build tool
+- **GitHub API** - REST API for user search
 
 ### Development Tools
 
 - **ESLint 9.36.0** - Static code analysis
 - **React Hooks** - Modern state management
-- **Custom Hooks** - Reusable logic
+- **Custom Hooks** - Reusable and modular logic
 
 ## 📝 Technical Notes
 
 ### Chosen Architecture
 
-- **Separation of concerns**: Business logic in custom hook
+#### Algorithm Exercise
+
+- **Separation of concerns** : Business logic in custom hook
 - **TypeScript** for type safety
 - **React Hooks** for state management
-- **Performance**: Early returns in FizzBuzz algorithm
+- **Performance** : Early returns in FizzBuzz algorithm
+
+#### Frontend Exercise
+
+- **Centralized custom hook** : `useUserManagement` encapsulates all logic
+- **Reusable components** : Modular and maintainable architecture
+- **Strict TypeScript** : Complete interfaces to prevent errors
+- **Debouncing** : API call optimization
+- **Robust error handling** : Handling all possible error cases
 
 ### Applied Best Practices
 
@@ -143,14 +185,17 @@ npm run dev
 - ✅ **Appropriate error handling**
 - ✅ **Readable and maintainable code**
 - ✅ **Strict ESLint configuration**
+- ✅ **Rigorous TypeScript typing**
+- ✅ **Separated component/logic architecture**
+- ✅ **Performance optimization** (debouncing, early returns)
+
+### Key Implementation Details
+
+#### Frontend
+
+- **Unique identifiers** : Added `idFull` to handle duplications
+- **Timeout management** : Proper cleanup to prevent memory leaks
+- **Loading states** : Improved UX with visual feedback
+- **Input validation** : Empty field and whitespace checking
 
 ---
-
-<div align="center">
-
-**Developed with ❤️ for Fulll**
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://linkedin.com/in/your-profile)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat-square&logo=github)](https://github.com/your-username)
-
-</div>
