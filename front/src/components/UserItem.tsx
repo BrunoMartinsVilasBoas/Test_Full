@@ -39,7 +39,7 @@ export const UserItem: React.FC<UserItemProps> = ({ user, addSelectedUser, selec
             type="checkbox"
             className="input_user_item_checkbox"
             name="user_item_checkbox"
-            onClick={() => addSelectedUser(user)}
+            onChange={() => addSelectedUser(user)}
             checked={selectedUsers.some((u) => u.idFull === user.idFull && u.login === user.login)}
           />
         </div>

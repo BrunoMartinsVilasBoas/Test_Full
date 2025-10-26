@@ -37,7 +37,7 @@ export const useUserManagement = () => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const timeoutRef = useRef<number | null>(null);
+  const timeoutRef: React.RefObject<number | null> = useRef(null);
 
   /**
    * Fetches GitHub users based on search value with debouncing
