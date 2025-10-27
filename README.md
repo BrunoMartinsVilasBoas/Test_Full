@@ -276,7 +276,6 @@ E2E tests to validate complete user scenarios:
 - **Unit testing** : Jest + React Testing Library for component isolation
 - **E2E testing** : Playwright for complete user journey validation
 - **Test coverage** : All components, hooks, and critical user flows tested
-- **Automated testing** : CI/CD ready test suites
 - **Multiple browsers** : Cross-browser testing with Playwright (Chromium, Firefox, WebKit)
 
 ---
