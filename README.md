@@ -104,8 +104,6 @@ npm install
 # Start development server
 npm run dev
 
-# Run linting tests
-npm run lint
 
 # Run unit tests (Jest)
 npm run test
