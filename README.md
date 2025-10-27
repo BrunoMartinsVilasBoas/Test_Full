@@ -90,8 +90,6 @@ npm install
 # Start development server
 npm run dev
 
-# Run linting tests
-npm run lint
 ```
 
 ### 🎨 Frontend Exercise
