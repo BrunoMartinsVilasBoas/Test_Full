@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { IGitHubSearchResponse, IGitHubSearchUser } from '../types/github';
 
 /**
@@ -15,6 +15,8 @@ import { IGitHubSearchResponse, IGitHubSearchUser } from '../types/github';
  * @returns {Function} resetSelectedUsersOrSelectAllUsers - Toggles between selecting all users or clearing selection
  * @returns {string | null} error - Error message if an error occurred
  * @returns {boolean} loading - Loading state indicator
+ * @returns {boolean} edit - Edit state indicator
+ * @returns {Function} toggleEdit - Toggles the edit state
  *
  * @example
  * ```tsx

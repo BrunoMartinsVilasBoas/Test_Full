@@ -4,6 +4,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-7.1.7-646cff?style=flat-square&logo=vite)](https://vitejs.dev/)
 [![ESLint](https://img.shields.io/badge/ESLint-9.36.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
+[![Jest](https://img.shields.io/badge/Jest-30.2.0-C21325?style=flat-square&logo=jest)](https://jestjs.io/)
+[![Playwright](https://img.shields.io/badge/Playwright-1.56.1-2EAD33?style=flat-square&logo=playwright)](https://playwright.dev/)
 
 > **Complete solutions to Fulll technical tests** - Algorithm and Frontend exercises
 
@@ -14,6 +16,7 @@
 - [⚡ Installation & Setup](#-installation--setup)
 - [🧮 Algorithm Exercise](#-algorithm-exercise)
 - [🎨 Frontend Exercise](#-frontend-exercise)
+- [🧪 Tests](#-tests)
 - [🛠️ Technologies Used](#️-technologies-used)
 - [📝 Technical Notes](#-technical-notes)
 
@@ -53,6 +56,17 @@ Test_Full/
 │   │   │   └── github.ts           # TypeScript interfaces
 │   │   ├── App.tsx                 # Main component
 │   │   └── ...
+│   ├── 📁 test/                # Unit tests (Jest)
+│   │   ├── ActionsSelected.test.tsx
+│   │   ├── SearchInput.test.tsx
+│   │   ├── UserItem.test.tsx
+│   │   ├── UserList.test.tsx
+│   │   └── useUserManagement.test.ts
+│   ├── 📁 tests/               # E2E tests (Playwright)
+│   │   ├── Action.spec.ts
+│   │   └── Search.spec.ts
+│   ├── playwright.config.ts
+│   ├── jest.config.js
 │   └── package.json
 └── 📄 README.md
 ```
@@ -94,6 +108,18 @@ npm run dev
 
 # Run linting tests
 npm run lint
+
+# Run unit tests (Jest)
+npm run test
+
+# Run E2E tests (Playwright)
+npx playwright test
+
+# Run E2E tests with UI
+npx playwright test --ui
+
+# View Playwright test report
+npx playwright show-report
 ```
 
 ## 🧮 Algorithm Exercise
@@ -144,6 +170,52 @@ Enter a number in the input field and the algorithm will automatically display t
 - **Strict TypeScript** : Complete interfaces for GitHub data
 - **Optimized management** : Debouncing and efficient state handling
 
+## 🧪 Tests
+
+The frontend project includes comprehensive test coverage with two types of tests:
+
+### Unit Tests (Jest)
+
+Unit tests for all components and hooks with **React Testing Library**:
+
+- ✅ **`SearchInput.test.tsx`** : Search bar tests
+- ✅ **`UserList.test.tsx`** : User list tests
+- ✅ **`UserItem.test.tsx`** : Individual item tests
+- ✅ **`ActionsSelected.test.tsx`** : Bulk actions tests
+- ✅ **`useUserManagement.test.ts`** : Main hook tests
+
+**Command**: `npm run test`
+
+### End-to-End Tests (Playwright)
+
+E2E tests to validate complete user scenarios:
+
+#### 🔍 Search Tests (`Search.spec.ts`)
+
+- ✅ Loading display verification
+- ✅ Successful user search
+- ✅ "User not found" case handling
+
+#### ⚡ Action Tests (`Action.spec.ts`)
+
+- ✅ Duplicate selected user
+- ✅ Delete selected user
+- ✅ Select all users
+
+**Commands**:
+
+- Normal execution: `npx playwright test`
+- Interactive UI mode: `npx playwright test --ui`
+- Detailed report: `npx playwright show-report`
+
+### Test Coverage
+
+- **Components**: 100% of components tested
+- **Custom hook**: Business logic fully tested
+- **E2E scenarios**: Complete user journeys validated
+- **Loading states**: Testing of loading/error/success states
+- **User actions**: All interactions tested
+
 ## 🛠️ Technologies Used
 
 ### Core Technologies
@@ -156,6 +228,9 @@ Enter a number in the input field and the algorithm will automatically display t
 ### Development Tools
 
 - **ESLint 9.36.0** - Static code analysis
+- **Jest 30.2.0** - Unit testing framework
+- **Playwright 1.56.1** - End-to-end testing
+- **React Testing Library** - Testing utilities for React
 - **React Hooks** - Modern state management
 - **Custom Hooks** - Reusable and modular logic
 
@@ -188,6 +263,8 @@ Enter a number in the input field and the algorithm will automatically display t
 - ✅ **Rigorous TypeScript typing**
 - ✅ **Separated component/logic architecture**
 - ✅ **Performance optimization** (debouncing, early returns)
+- ✅ **Comprehensive testing** (unit tests with Jest + E2E tests with Playwright)
+- ✅ **Test-driven development** for components and hooks
 
 ### Key Implementation Details
 
@@ -197,5 +274,13 @@ Enter a number in the input field and the algorithm will automatically display t
 - **Timeout management** : Proper cleanup to prevent memory leaks
 - **Loading states** : Improved UX with visual feedback
 - **Input validation** : Empty field and whitespace checking
+
+#### Tests
+
+- **Unit testing** : Jest + React Testing Library for component isolation
+- **E2E testing** : Playwright for complete user journey validation
+- **Test coverage** : All components, hooks, and critical user flows tested
+- **Automated testing** : CI/CD ready test suites
+- **Multiple browsers** : Cross-browser testing with Playwright (Chromium, Firefox, WebKit)
 
 ---

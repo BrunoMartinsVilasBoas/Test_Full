@@ -4,4 +4,6 @@ export default {
     '^.+\\.tsx?$': 'ts-jest',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  testMatch: ['<rootDir>/test/**/*.test.{ts,tsx}'],
+  testPathIgnorePatterns: ['/node_modules/', '/tests/'],
 };
