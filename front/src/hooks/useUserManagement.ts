@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { IGitHubSearchResponse, IGitHubSearchUser } from '../types/github';
 
 /**
@@ -34,6 +34,7 @@ import { IGitHubSearchResponse, IGitHubSearchUser } from '../types/github';
 export const useUserManagement = () => {
   const [userData, setUserData] = useState<IGitHubSearchResponse | null>(null);
   const [selectedUsers, setSelectedUsers] = useState<IGitHubSearchUser[]>([]);
+  const [edit, setEdit] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -48,6 +49,7 @@ export const useUserManagement = () => {
    */
   const fetchUser = async (searchValue: string): Promise<void> => {
     setError(null);
+    setSelectedUsers([]);
 
     if (searchValue.length === 0 || /^\s*$/.test(searchValue)) {
       setUserData(null);
@@ -170,6 +172,13 @@ export const useUserManagement = () => {
     }
   };
 
+  const toggleEdit = () => {
+    if (edit) {
+      setSelectedUsers([]);
+    }
+    setEdit(!edit);
+  };
+
   return {
     duplicateSelectedUsers,
     deleteSelectedUsers,
@@ -180,5 +189,7 @@ export const useUserManagement = () => {
     resetSelectedUsersOrSelectAllUsers,
     error,
     loading,
+    edit,
+    toggleEdit,
   };
 };

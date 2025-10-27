@@ -29,6 +29,8 @@ function App() {
     resetSelectedUsersOrSelectAllUsers,
     error,
     loading,
+    edit,
+    toggleEdit,
   } = useUserManagement();
 
   return (
@@ -41,6 +43,8 @@ function App() {
         duplicateSelectedUsers={duplicateSelectedUsers}
         deleteSelectedUsers={deleteSelectedUsers}
         resetSelectedUsersOrSelectAllUsers={resetSelectedUsersOrSelectAllUsers}
+        edit={edit}
+        toggleEdit={toggleEdit}
       />
       <UserList
         userData={userData!}
@@ -48,6 +52,7 @@ function App() {
         selectedUsers={selectedUsers}
         error={error!}
         loading={loading}
+        edit={edit}
       />
     </div>
   );

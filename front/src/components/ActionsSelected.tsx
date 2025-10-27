@@ -13,6 +13,10 @@ interface ActionsSelectedProps {
   deleteSelectedUsers: () => void;
   /** Callback function to either reset selection or select all users */
   resetSelectedUsersOrSelectAllUsers: () => void;
+  /** Boolean to indicate if the edit mode is active */
+  edit: boolean;
+  /** Callback function to toggle the edit mode */
+  toggleEdit: () => void;
 }
 
 /**
@@ -27,6 +31,8 @@ export const ActionsSelected: React.FC<ActionsSelectedProps> = ({
   duplicateSelectedUsers,
   deleteSelectedUsers,
   resetSelectedUsersOrSelectAllUsers,
+  edit,
+  toggleEdit,
 }) => {
   return (
     <div className="container_actions_selected">
@@ -40,13 +46,19 @@ export const ActionsSelected: React.FC<ActionsSelectedProps> = ({
         <span> {selectedUsers.length}</span>elements selected
       </div>
       <div className="container_actions_selected_buttons">
-        <img
-          src={'/icon/duplicate.svg'}
-          alt="Duplicate"
-          onClick={duplicateSelectedUsers}
-          className="icon_actions_selected"
-        />
-        <img src={'/icon/trash.svg'} alt="Delete" onClick={deleteSelectedUsers} className="icon_actions_selected" />
+        <img src={'/icon/edit.svg'} alt="Edit" className="icon_actions_selected" onClick={toggleEdit} />
+
+        {edit && (
+          <>
+            <img
+              src={'/icon/duplicate.svg'}
+              alt="Duplicate"
+              onClick={duplicateSelectedUsers}
+              className="icon_actions_selected"
+            />
+            <img src={'/icon/trash.svg'} alt="Delete" onClick={deleteSelectedUsers} className="icon_actions_selected" />
+          </>
+        )}
       </div>
     </div>
   );

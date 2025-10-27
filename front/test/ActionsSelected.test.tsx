@@ -55,11 +55,13 @@ describe('ActionsSelected Component', () => {
   let mockDuplicateSelectedUsers: jest.Mock;
   let mockDeleteSelectedUsers: jest.Mock;
   let mockResetSelectedUsersOrSelectAllUsers: jest.Mock;
+  let mockToggleEdit: jest.Mock;
 
   beforeEach(() => {
     mockDuplicateSelectedUsers = jest.fn();
     mockDeleteSelectedUsers = jest.fn();
     mockResetSelectedUsersOrSelectAllUsers = jest.fn();
+    mockToggleEdit = jest.fn();
   });
 
   test('should render the component with no selected users', () => {
@@ -69,6 +71,8 @@ describe('ActionsSelected Component', () => {
         duplicateSelectedUsers={mockDuplicateSelectedUsers}
         deleteSelectedUsers={mockDeleteSelectedUsers}
         resetSelectedUsersOrSelectAllUsers={mockResetSelectedUsersOrSelectAllUsers}
+        edit={false}
+        toggleEdit={mockToggleEdit}
       />
     );
 
@@ -83,6 +87,8 @@ describe('ActionsSelected Component', () => {
         duplicateSelectedUsers={mockDuplicateSelectedUsers}
         deleteSelectedUsers={mockDeleteSelectedUsers}
         resetSelectedUsersOrSelectAllUsers={mockResetSelectedUsersOrSelectAllUsers}
+        edit={false}
+        toggleEdit={mockToggleEdit}
       />
     );
 
@@ -96,6 +102,8 @@ describe('ActionsSelected Component', () => {
         duplicateSelectedUsers={mockDuplicateSelectedUsers}
         deleteSelectedUsers={mockDeleteSelectedUsers}
         resetSelectedUsersOrSelectAllUsers={mockResetSelectedUsersOrSelectAllUsers}
+        edit={false}
+        toggleEdit={mockToggleEdit}
       />
     );
 
@@ -109,6 +117,8 @@ describe('ActionsSelected Component', () => {
         duplicateSelectedUsers={mockDuplicateSelectedUsers}
         deleteSelectedUsers={mockDeleteSelectedUsers}
         resetSelectedUsersOrSelectAllUsers={mockResetSelectedUsersOrSelectAllUsers}
+        edit={true}
+        toggleEdit={mockToggleEdit}
       />
     );
 
@@ -128,6 +138,8 @@ describe('ActionsSelected Component', () => {
         duplicateSelectedUsers={mockDuplicateSelectedUsers}
         deleteSelectedUsers={mockDeleteSelectedUsers}
         resetSelectedUsersOrSelectAllUsers={mockResetSelectedUsersOrSelectAllUsers}
+        edit={true}
+        toggleEdit={mockToggleEdit}
       />
     );
 
@@ -144,6 +156,8 @@ describe('ActionsSelected Component', () => {
         duplicateSelectedUsers={mockDuplicateSelectedUsers}
         deleteSelectedUsers={mockDeleteSelectedUsers}
         resetSelectedUsersOrSelectAllUsers={mockResetSelectedUsersOrSelectAllUsers}
+        edit={true}
+        toggleEdit={mockToggleEdit}
       />
     );
 
@@ -160,6 +174,8 @@ describe('ActionsSelected Component', () => {
         duplicateSelectedUsers={mockDuplicateSelectedUsers}
         deleteSelectedUsers={mockDeleteSelectedUsers}
         resetSelectedUsersOrSelectAllUsers={mockResetSelectedUsersOrSelectAllUsers}
+        edit={false}
+        toggleEdit={mockToggleEdit}
       />
     );
 
@@ -178,6 +194,8 @@ describe('ActionsSelected Component', () => {
         duplicateSelectedUsers={mockDuplicateSelectedUsers}
         deleteSelectedUsers={mockDeleteSelectedUsers}
         resetSelectedUsersOrSelectAllUsers={mockResetSelectedUsersOrSelectAllUsers}
+        edit={false}
+        toggleEdit={mockToggleEdit}
       />
     );
 
@@ -192,6 +210,8 @@ describe('ActionsSelected Component', () => {
         duplicateSelectedUsers={mockDuplicateSelectedUsers}
         deleteSelectedUsers={mockDeleteSelectedUsers}
         resetSelectedUsersOrSelectAllUsers={mockResetSelectedUsersOrSelectAllUsers}
+        edit={false}
+        toggleEdit={mockToggleEdit}
       />
     );
 
@@ -206,6 +226,8 @@ describe('ActionsSelected Component', () => {
         duplicateSelectedUsers={mockDuplicateSelectedUsers}
         deleteSelectedUsers={mockDeleteSelectedUsers}
         resetSelectedUsersOrSelectAllUsers={mockResetSelectedUsersOrSelectAllUsers}
+        edit={true}
+        toggleEdit={mockToggleEdit}
       />
     );
 
@@ -213,6 +235,6 @@ describe('ActionsSelected Component', () => {
     expect(container.querySelector('.container_actions_selected_reste_content')).toBeInTheDocument();
     expect(container.querySelector('.container_actions_selected_reste')).toBeInTheDocument();
     expect(container.querySelector('.container_actions_selected_buttons')).toBeInTheDocument();
-    expect(container.querySelectorAll('.icon_actions_selected')).toHaveLength(2);
+    expect(container.querySelectorAll('.icon_actions_selected')).toHaveLength(3);
   });
 });

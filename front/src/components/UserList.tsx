@@ -17,6 +17,7 @@ interface UserListProps {
   selectedUsers: IGitHubSearchUser[];
   error?: string;
   loading: boolean;
+  edit: boolean;
 }
 
 /**
@@ -35,10 +36,18 @@ interface UserListProps {
  *   selectedUsers={selectedUsersList}
  *   error={errorMessage}
  *   loading={isLoading}
+ *   edit={edit}
  * />
  * ```
  */
-export const UserList: React.FC<UserListProps> = ({ userData, addSelectedUser, selectedUsers, error, loading }) => {
+export const UserList: React.FC<UserListProps> = ({
+  userData,
+  addSelectedUser,
+  selectedUsers,
+  error,
+  loading,
+  edit,
+}) => {
   if (error) {
     return (
       <div className="container_user">
@@ -83,7 +92,13 @@ export const UserList: React.FC<UserListProps> = ({ userData, addSelectedUser, s
     <div className="container_user">
       <div className="container_user_list">
         {userData.items.map((user) => (
-          <UserItem key={user.idFull} user={user} addSelectedUser={addSelectedUser} selectedUsers={selectedUsers} />
+          <UserItem
+            key={user.idFull}
+            user={user}
+            addSelectedUser={addSelectedUser}
+            selectedUsers={selectedUsers}
+            edit={edit}
+          />
         ))}
       </div>
     </div>

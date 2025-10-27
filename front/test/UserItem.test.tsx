@@ -35,7 +35,7 @@ describe('UserItem Component', () => {
   });
 
   test('should render the component with all user information', () => {
-    render(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[]} />);
+    render(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[]} edit={true} />);
 
     expect(screen.getByText('12345')).toBeInTheDocument();
 
@@ -53,7 +53,7 @@ describe('UserItem Component', () => {
   });
 
   test('should display an unchecked checkbox when the user is not selected', () => {
-    render(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[]} />);
+    render(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[]} edit={true} />);
 
     const checkbox = screen.getByRole('checkbox');
     expect(checkbox).toBeInTheDocument();
@@ -61,14 +61,14 @@ describe('UserItem Component', () => {
   });
 
   test('should display a checked checkbox when the user is selected', () => {
-    render(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[mockUser]} />);
+    render(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[mockUser]} edit={true} />);
 
     const checkbox = screen.getByRole('checkbox');
     expect(checkbox).toBeChecked();
   });
 
   test('should call addSelectedUser with the correct user when clicking the checkbox', () => {
-    render(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[]} />);
+    render(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[]} edit={true} />);
 
     const checkbox = screen.getByRole('checkbox');
     fireEvent.click(checkbox);
@@ -86,20 +86,29 @@ describe('UserItem Component', () => {
     };
 
     const { rerender } = render(
-      <UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[otherUser]} />
+      <UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[otherUser]} edit={true} />
     );
 
     let checkbox = screen.getByRole('checkbox');
     expect(checkbox).not.toBeChecked();
 
-    rerender(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[mockUser, otherUser]} />);
+    rerender(
+      <UserItem
+        user={mockUser}
+        addSelectedUser={mockAddSelectedUser}
+        selectedUsers={[mockUser, otherUser]}
+        edit={true}
+      />
+    );
 
     checkbox = screen.getByRole('checkbox');
     expect(checkbox).toBeChecked();
   });
 
   test('should have the correct CSS classes', () => {
-    const { container } = render(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[]} />);
+    const { container } = render(
+      <UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[]} edit={true} />
+    );
 
     expect(container.querySelector('.container_user_item')).toBeInTheDocument();
     expect(container.querySelector('.container_user_item_content')).toBeInTheDocument();
@@ -110,7 +119,7 @@ describe('UserItem Component', () => {
   });
 
   test('should have the correct element IDs', () => {
-    render(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[]} />);
+    render(<UserItem user={mockUser} addSelectedUser={mockAddSelectedUser} selectedUsers={[]} edit={true} />);
 
     expect(document.getElementById('user_item_id')).toBeInTheDocument();
     expect(document.getElementById('user_item_login')).toBeInTheDocument();

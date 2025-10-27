@@ -74,6 +74,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={errorMessage}
           loading={false}
+          edit={false}
         />
       );
 
@@ -89,6 +90,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error="Test error"
           loading={false}
+          edit={false}
         />
       );
 
@@ -107,6 +109,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={true}
+          edit={false}
         />
       );
 
@@ -121,6 +124,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={true}
+          edit={false}
         />
       );
 
@@ -138,6 +142,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={false}
+          edit={false}
         />
       );
 
@@ -152,6 +157,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={false}
+          edit={false}
         />
       );
 
@@ -175,6 +181,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={false}
+          edit={false}
         />
       );
 
@@ -195,6 +202,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={false}
+          edit={false}
         />
       );
 
@@ -211,6 +219,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={false}
+          edit={false}
         />
       );
 
@@ -228,6 +237,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={false}
+          edit={false}
         />
       );
 
@@ -243,6 +253,7 @@ describe('UserList Component', () => {
           selectedUsers={[mockUser1]}
           error={undefined}
           loading={false}
+          edit={true}
         />
       );
 
@@ -264,6 +275,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={false}
+          edit={false}
         />
       );
 
@@ -280,6 +292,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={false}
+          edit={false}
         />
       );
 
@@ -297,6 +310,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error="Test error"
           loading={true}
+          edit={false}
         />
       );
 
@@ -312,6 +326,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error="Test error"
           loading={false}
+          edit={false}
         />
       );
 
@@ -327,6 +342,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={true}
+          edit={false}
         />
       );
 
@@ -357,6 +373,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={false}
+          edit={false}
         />
       );
 
@@ -372,6 +389,7 @@ describe('UserList Component', () => {
           selectedUsers={[mockUser1, mockUser2]}
           error={undefined}
           loading={false}
+          edit={true}
         />
       );
 
@@ -399,6 +417,7 @@ describe('UserList Component', () => {
           selectedUsers={[]}
           error={undefined}
           loading={false}
+          edit={false}
         />
       );
 
